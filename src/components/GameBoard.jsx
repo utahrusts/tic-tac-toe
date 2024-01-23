@@ -2,23 +2,23 @@
 
 
 
-export default function GameBoard({onSelectSquare, gameBoard}) {
+export default function GameBoard({onSelectSquare, gameBoard, images}) {
    
   
     return (
          <ol id="game-board">
-          {gameBoard .map((row, rowIndex)=>
+          {gameBoard.map((row, rowIndex)=>
                 <li key={rowIndex}>
                     <ol>
-                       {row.map((playerSymbol,colIndex)=>
+                       {row.map((player,colIndex)=>
                        <li key={colIndex}>
-                          <button disabled={playerSymbol} onClick={()=> onSelectSquare(rowIndex, colIndex)}>
-                            {playerSymbol}
+                          <button disabled={player} onClick={()=> onSelectSquare(rowIndex, colIndex)}>
+                            {player !== null && <img className="play-image" src={images[player]}></img>}
                           </button>
                         </li>)}
                     </ol>
                 </li>)}
          </ol>
-    )
+    );
 
 }
