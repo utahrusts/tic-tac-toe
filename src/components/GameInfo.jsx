@@ -7,7 +7,7 @@ import flower from '../assets/flower.png';
 import snowflake from '../assets/snowflake.png';
 import diamond from '../assets/diamond.png';
 import football from '../assets/football.png';
-import {insertLog, getLogs} from '../util/game-log.js'
+
 
 
 
@@ -44,8 +44,6 @@ export default function GameInfo({handlePlay}) {
         gameInfo.players[0].symbol && 
         gameInfo.players[1].name && 
         gameInfo.players[1].symbol){
-            insertLog(gameInfo.players[0].symbol.label,gameInfo.players[1].symbol.label,gameInfo.rounds)
-            //getLogs();
             handlePlay(gameInfo);
         
     }else{

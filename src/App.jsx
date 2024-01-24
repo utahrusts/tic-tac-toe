@@ -2,6 +2,7 @@ import Game from './components/Game.jsx';
 import { useState } from 'react';
 import Welcome from './components/Welcome.jsx';
 import GameInfo from './components/GameInfo.jsx';
+import {insertLog, getLogs} from './util/game-log.js'
 
 
 
@@ -17,8 +18,10 @@ function App() {
    
   }
 
-  function onPlay(info){
+  async function onPlay(info){
     setGameInfo(info);
+    const gameId = await insertLog(info.players[0].symbol.label,info.players[1].symbol.label,info.rounds)
+    info.gameId = gameId;
   
   }
 

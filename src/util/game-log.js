@@ -11,15 +11,45 @@ export const insertLog = async function (symbol1, symbol2, rounds){
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*"}
 
-          await axios.post(`${END_POINT_URL}add-log`,{
-             symbol1,
-             symbol2,
-             rounds
-          }, {
+         const params = { symbol1,symbol2, rounds}
+
+          const data = await axios.get(`${END_POINT_URL}add-log`, 
+          {
+            params
+          },
+          {
             headers
           })
           console.log("Done inserting log")
-          return;
+          console.log(JSON.stringify(data));
+          const gameId = data.data.result.rows[0].game_id
+
+          return gameId;
+
+    }catch(error){
+        console.log(`There was an error inserting the game log: ${error}`);
+    }
+}
+
+export const updateEndTime = async function (gameId){
+    try{
+         console.log("Inside of updateEndTime")
+         const headers = {
+            "Cache-Control": "no-cache",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"}
+
+         const params = { gameId }
+
+          const data = await axios.get(`${END_POINT_URL}update-endtime`, 
+          {
+            params
+          },
+          {
+            headers
+          })
+          console.log("Done inserting log");
+          console.log(JSON.stringify(data));
 
     }catch(error){
         console.log(`There was an error inserting the game log: ${error}`);
@@ -28,11 +58,8 @@ export const insertLog = async function (symbol1, symbol2, rounds){
 
 export const getLogs = async function (){
     try{
-         console.log("Inside of getLogs")
           const data = await axios.get(`${END_POINT_URL}get-logs`)
-          console.log("Done getting logs");
-          JSON.stringify(data);
-          return;
+          return data.data;
 
     }catch(error){
         console.log(`There was an error inserting the game log: ${error}`);

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { WINNING_COMBINATIONS } from './winning-combinations.js';
 import ShowWinner from './ShowWinner.jsx';
 import Rounds from './Rounds.jsx';
+import {updateEndTime} from '../util/game-log.js'
 
 const INITIAL_GAME_BOARD = [
   [null, null, null],
@@ -90,9 +91,10 @@ export default function Game({ gameInfo, onExit}) {
     }
   }
 
-  function onExitGame(){
+  async function onExitGame(){
     setGameTurns([]);
     setRoundInfo([]);
+    await updateEndTime(gameInfo.gameId);
     onExit();
   }
 

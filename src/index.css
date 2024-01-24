@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Roboto+Slab:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&family=Roboto+Slab:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: "Roboto Slab", sans-serif;
   line-height: 1.5;
 
   color: #ebe7ef;
@@ -23,9 +23,12 @@ body {
       rgba(241, 210, 70, 0.98),
       rgba(250, 176, 103, 0.87)
     ),
-    url('bg-pattern-dark.png');
+    url("bg-pattern-dark.png");
   background-repeat: repeat;
-  background-size: 100% 100%, 30% 30%, 100% 100%;
+  background-size:
+    100% 100%,
+    30% 30%,
+    100% 100%;
   min-height: 110rem;
 }
 
@@ -41,14 +44,14 @@ header img {
 }
 
 h1 {
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   font-size: 3rem;
   margin: 0 auto 3rem auto;
   color: #3f3b00;
 }
 
 label {
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   font-size: 2rem;
   text-align: center;
   color: #fcd256;
@@ -62,8 +65,21 @@ label {
   background: linear-gradient(#383624, #282617);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   position: relative;
-  width:1000px;
-  height:500px;
+  width: 1000px;
+  height: 500px;
+}
+
+#stat-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  border-radius: 6px;
+  background: linear-gradient(#383624, #282617);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  width: 1000px;
+  height: 500px;
+  gap: 50px;
 }
 
 #game-container {
@@ -93,22 +109,22 @@ label {
   gap: 20px;
 }
 
-.round-info{
-    display: flex;
-    justify-content: center;
-    font-size: 1rem;
-    color: #e1dec7;
-    text-transform: uppercase;
-    margin: 0;
-    padding: 0.1rem;
-    border-radius: 4px;
-    text-overflow: ellipsis;
-    text-align: center;
+.round-info {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  color: #e1dec7;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0.1rem;
+  border-radius: 4px;
+  text-overflow: ellipsis;
+  text-align: center;
 }
 
 .round-section {
-    display: flex;
-    gap: 20px
+  display: flex;
+  gap: 20px;
 }
 
 .players {
@@ -118,10 +134,7 @@ label {
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  
-  
 }
-
 
 .player {
   width: 50%;
@@ -133,10 +146,6 @@ label {
   border-radius: 4px;
   font-weight: bold;
 }
-
-
-
-
 
 .active-player {
   border: 2px solid #f8ca31;
@@ -159,7 +168,6 @@ ol {
   margin: 0;
   padding: 0;
 }
-
 
 #game-board {
   display: flex;
@@ -188,7 +196,7 @@ ol {
   color: #3f3b00;
   font-size: 5rem;
   cursor: pointer;
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   padding: 1rem;
 }
 
@@ -206,9 +214,8 @@ ol {
   animation: pop-in 0.5s cubic-bezier(0.68, -0.55, 0.65, 0.52) forwards;
 }
 
-
 #overlay-dialog h2 {
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   font-size: 4rem;
   text-align: center;
   color: #fcd256;
@@ -222,17 +229,15 @@ ol {
 }
 
 #rounds {
-    border-color: #fcd256;
-    background-color: #46432f;
-    font-size: 1rem;
-    font: inherit;
-    border: 2px solid #fcd256;
-    padding: 0.5rem;
-
+  border-color: #fcd256;
+  background-color: #46432f;
+  font-size: 1rem;
+  font: inherit;
+  border: 2px solid #fcd256;
+  padding: 0.5rem;
 }
 
-
-#player-input{
+#player-input {
   border-color: #f6e35a;
   animation: pulse 2s infinite ease-in-out;
   font: inherit;
@@ -260,7 +265,9 @@ ol {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.2s, color 0.2s;
+  transition:
+    all 0.2s,
+    color 0.2s;
   box-shadow: 0 0 8px rgba(255, 187, 0, 0.4);
 }
 
@@ -271,9 +278,6 @@ ol {
   box-shadow: 0 0 20px rgba(255, 187, 0, 0.8);
 }
 
-
-
-
 .selector-div {
   display: flex;
   justify-content: center;
@@ -282,17 +286,17 @@ ol {
 }
 
 #error-text {
-   display: flex;
-   justify-content: center;
-   color: red;
-   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  color: red;
+  font-weight: bold;
 }
 
 /* Dropdown styles */
 .dropdown {
   position: relative;
   display: inline-block;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: "Roboto Slab", sans-serif;
 }
 
 .dropdown-toggle {
@@ -365,7 +369,10 @@ ol {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-12px);
-  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
   max-height: 300px;
   overflow-y: auto;
   border-radius: 4px;
@@ -411,6 +418,37 @@ ol {
 .dropdown.open .dropdown-menu {
   border-radius: 0 0 4px 4px;
   border-top: none;
+}
+
+/* Scrollable Table with fixed header */
+.tableFixHead {
+  overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
+  height: 50px; /* gives an initial height of 200px to the table */
+  background: linear-gradient(#383624, #282617);
+  border: 1px solid #fcd256;
+  font: inherit;
+  font-size: 0.75rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #e1dec7;
+}
+.tableFixHead thead th {
+  position: sticky; /* make the table heads sticky */
+  top: 0px; /* table head will be placed from the top of the table and sticks to it */
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse; /* make the table borders collapse to each other */
+  width: 100%;
+  font-size: 0.25rem
+}
+th,
+td {
+  padding: 8px 16px;
+  border: 1px solid #fcd256;
+}
+th {
+  background: linear-gradient(#383624, #282617);
 }
 
 /* End of drop down styles */
